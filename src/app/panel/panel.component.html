@@ -1,0 +1,10 @@
+<form [formGroup]="webSelected" id="webSelected">
+    <div formControlName="numberPages" ngDefaultControl >
+        <label for="numberPages"  >Número de páginas</label>
+        <app-counter formControlName="numberPages" #pagesNumber></app-counter>
+     </div>
+     <div formControlName="numberLanguages" ngDefaultControl >
+        <label for="numberLanguages" >Número de idiomas</label>
+        <app-counter formControlName="numberLanguages" #languagesNumber></app-counter>
+     </div>
+</form>

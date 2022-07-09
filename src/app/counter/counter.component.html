@@ -1,0 +1,5 @@
+<button class="btn btn-warning" type="button" (click)="increment()">+</button>
+
+<input type="number" [(ngModel)]="inputValue"/>
+
+<button class="btn btn-warning" type="button" [class.disabled]="inputValue <= 1" (click)="decrement()">-</button>

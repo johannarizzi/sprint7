@@ -1,0 +1,17 @@
+<div class="container" *ngIf="!starter">
+    <div class="row d-flex justify-content-center ps-5 ">
+    <div>
+        <h1>Bienvenido/a al Sprint 7</h1>
+
+        <p>En esta entrega realizaremos una aplicación con el fin de facilitar los cálculos del presupuesto de una página web,  añadiendo interacciones con el usuario. 
+
+            Nuestra web deberá reaccionar y modificar el precio total en función de las opciones escogidas por el usuario/a.</p>
+
+    <button class="btn" (click)="showHome()">Empezar</button>
+    </div>
+</div>
+</div>
+<ng-container class="home-div" *ngIf="starter">
+    <app-home></app-home>
+</ng-container>
+

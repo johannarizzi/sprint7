@@ -1,0 +1,24 @@
+.input {
+    border: none;
+    max-width: 3rem;
+    text-align: center;
+}
+
+button {
+    background-color: #da703f;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 5px 10px;
+  }
+  
+  button:hover {
+    background-color: #da3f10;
+  }
+  
+  button:focus{ 
+    outline: none;
+  }
