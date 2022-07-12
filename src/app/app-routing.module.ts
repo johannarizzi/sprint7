@@ -5,7 +5,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 const routes: Routes = [
   {path: '', component: WelcomePageComponent},
-  {path: 'home', component: HomeComponent },
+  {path: 'home', component: HomeComponent }
 ];
 
 @NgModule({

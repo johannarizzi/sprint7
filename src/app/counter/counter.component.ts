@@ -1,4 +1,4 @@
-import { Component, forwardRef } from '@angular/core';
+import { Component, forwardRef, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
@@ -9,46 +9,52 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => CounterComponent),
+      useExisting: CounterComponent,
       multi: true
     }
   ]
 })
-export class CounterComponent implements ControlValueAccessor {
-
+export class CounterComponent implements OnInit, ControlValueAccessor {
+  
 
   _inputValue: number = 0;
 
+  constructor() { 
+  
+  }
+  ngOnInit(): void{
 
-  writeValue(value: any) {
-    if (value !== undefined) {
-      this.inputValue = value;
+  }
+
+  writeValue(obj: any) {
+    if (obj !== undefined) {
+      this.inputValue = obj;
     }
   }
-  
-  propagateChange = (_: any) => {};
-  registerOnTouched(): void {};
-
   registerOnChange( fn : any) {
     this.propagateChange = fn ;
   }
+  propagateChange = (fn: any) => {};
+
+  registerOnTouched(): void {};
+ 
+  setDisabledState (isDisabled: boolean):  void  {}
 
   get inputValue() {
     return this._inputValue;
   }
 
-  set inputValue(val) {
-    this._inputValue = val;
+  set inputValue(value) {
+    this._inputValue = value;
     this.propagateChange(this._inputValue);
   }
 
-  decrement(): void {
+  subtract(): void {
      if (this.inputValue < 2) { return }
     this.inputValue--;
   }
 
-  increment(): void {
-   
+  add(): void {
     this.inputValue++;
   }
 
