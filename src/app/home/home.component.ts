@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
       this.webSelected = selected;
       this._budgetService.computeSubTotal(selected, 500);
       this.updateBugdet();
+     
     });
     this.servicesForm.get('seo')!.valueChanges.subscribe(selected => {
       this._budgetService.computeSubTotal(selected, 300);
