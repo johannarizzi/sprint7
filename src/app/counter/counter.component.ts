@@ -18,6 +18,7 @@ export class CounterComponent implements OnInit, ControlValueAccessor {
   
 
   _inputValue: number = 0;
+  disabled = false;
 
   constructor() { 
   
@@ -27,7 +28,7 @@ export class CounterComponent implements OnInit, ControlValueAccessor {
   }
 
   writeValue(obj: any) {
-    if (obj !== undefined) {
+    if (obj != undefined) {
       this.inputValue = obj;
     }
   }
@@ -38,7 +39,9 @@ export class CounterComponent implements OnInit, ControlValueAccessor {
 
   registerOnTouched(): void {};
  
-  setDisabledState (isDisabled: boolean):  void  {}
+  setDisabledState (isDisabled: boolean):  void  {
+    this.disabled = isDisabled;
+  }
 
   get inputValue() {
     return this._inputValue;

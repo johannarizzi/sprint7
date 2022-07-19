@@ -13,10 +13,10 @@ export class ServiceBudgetService {
    computeSubTotal(selected: boolean, price: number) {
     if (selected) {
       this.subTotalBudget += price;
-      this.totalBudget += price
+      this.totalBudget += price;
     } else {
       this.subTotalBudget -= price;
-      this.totalBudget -= price
+      this.totalBudget -= price;
     }
   }
 

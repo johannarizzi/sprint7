@@ -54,10 +54,12 @@ export class HomeComponent implements OnInit {
  updateBugdet(): void {
     this.totalBudget = this._budgetService.totalBudget;
     this.subTotalBudget = this._budgetService.subTotalBudget;
+  
   }
   
   showTotal(value:number): void {
     this._budgetService.showTotal(value);
     this.updateBugdet();
   }
+ 
 }
