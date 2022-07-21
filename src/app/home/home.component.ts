@@ -29,15 +29,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.updateBugdet();
-
-  }
-    
-  ngAfterViewInit(): void {
-    
     this.servicesForm.get('web')!.valueChanges.subscribe(selected => {
       this.webSelected = selected;
-      this._budgetService.computeSubTotal(selected, 500);
+      this._budgetService.computeSubTotal(selected, 500 + 30);
       this.updateBugdet();
      
     });
@@ -49,6 +43,7 @@ export class HomeComponent implements OnInit {
       this._budgetService.computeSubTotal(selected, 200);
       this.updateBugdet();
     });
+
   }
 
  updateBugdet(): void {

@@ -22,18 +22,17 @@ export class ServiceBudgetService {
 
   showTotal(total: number) {
     this.totalBudget = total;
-    
+  
   }
 
   calculateTotal(subTotalBudget: number, pagesNumber: number, languagesNumber: number): number {
     
+       
     if (pagesNumber <= 0 && languagesNumber <= 0) {
       return subTotalBudget;
     }
     
-    return subTotalBudget + (pagesNumber * languagesNumber * 30 );
+    return (subTotalBudget -30) + (pagesNumber * languagesNumber * 30 );
   }
 }
-
-
 

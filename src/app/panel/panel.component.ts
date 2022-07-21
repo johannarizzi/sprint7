@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { ServiceBudgetService } from '../service-budget.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { of } from 'rxjs';
@@ -15,8 +15,8 @@ export class PanelComponent implements OnInit, OnDestroy {
   @Output() onTotalEvent = new EventEmitter<number>(); 
 
   webSelected: FormGroup = new FormGroup({
-    numberPages: new FormControl('1', [Validators.required, Validators.min(1)]),
-    numberLanguages: new FormControl('1', [Validators.required, Validators.min(1)]),
+    numberPages: new FormControl(1, [Validators.required,]),
+    numberLanguages: new FormControl(1, [Validators.required,]),
     
   });
 
@@ -36,7 +36,7 @@ export class PanelComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void {
-    this.onTotalEvent.emit(this._budgetService.calculateTotal(this.subTotalBudget-=500,0,0));
+    this.onTotalEvent.emit(this._budgetService.calculateTotal(this.subTotalBudget-=530,0,0));
   }
  
  

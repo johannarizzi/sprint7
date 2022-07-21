@@ -17,19 +17,20 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class CounterComponent implements OnInit, ControlValueAccessor {
   
 
-  _inputValue: number = 0;
+  _inputValue: number = 1;
   disabled = false;
 
   constructor() { 
-  
+  this._inputValue;
   }
   ngOnInit(): void{
-
+  
   }
 
   writeValue(obj: any) {
     if (obj != undefined) {
       this.inputValue = obj;
+
     }
   }
   registerOnChange( fn : any) {
@@ -45,6 +46,7 @@ export class CounterComponent implements OnInit, ControlValueAccessor {
 
   get inputValue() {
     return this._inputValue;
+   
   }
 
   set inputValue(value) {
@@ -53,7 +55,8 @@ export class CounterComponent implements OnInit, ControlValueAccessor {
   }
 
   subtract(): void {
-     if (this.inputValue < 2) { return }
+     if (this.inputValue < 2)
+      { return }
     this.inputValue--;
   }
 
